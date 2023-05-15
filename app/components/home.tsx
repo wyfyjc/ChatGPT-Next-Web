@@ -70,8 +70,8 @@ export function useSwitchTheme() {
     );
 
     if (config.theme === "auto") {
-      metaDescriptionDark?.setAttribute("content", "#151515");
-      metaDescriptionLight?.setAttribute("content", "#fafafa");
+      metaDescriptionDark?.setAttribute("content", "#5c3f48");
+      metaDescriptionLight?.setAttribute("content", "#fdd2d3");
     } else {
       const themeColor = getCSSVar("--theme-color");
       metaDescriptionDark?.setAttribute("content", themeColor);
