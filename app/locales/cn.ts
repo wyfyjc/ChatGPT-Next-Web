@@ -4,17 +4,17 @@ const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized:
-      "访问密码不正确或为空，请前往[设置](/#/settings)页输入正确的访问密码，或者填入你自己的 OpenAI API Key。",
+      "请在[设置](/#/settings)中输入密码，或填入一个可用的 API Key",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
   },
   Chat: {
-    SubTitle: (count: number) => `与 ChatGPT 的 ${count} 条对话`,
+    SubTitle: (count: number) => `共 ${count} 条对话`,
     Actions: {
       ChatList: "查看消息列表",
       CompressedHistory: "查看压缩后的历史 Prompt",
-      Export: "导出聊天记录",
+      Export: "导出对话记录",
       Copy: "复制",
       Stop: "停止",
       Retry: "重试",
@@ -27,7 +27,7 @@ const cn = {
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += "，Shift + Enter 换行";
       }
-      return inputHints + "，/ 触发补全";
+      return inputHints + "，/ 使用预设指令";
     },
     Send: "发送",
     Config: {
@@ -36,7 +36,7 @@ const cn = {
     },
   },
   Export: {
-    Title: "导出聊天记录为 Markdown",
+      Title: "导出对话记录为 Markdown",
     Copy: "全部复制",
     Download: "下载文件",
     MessageFromYou: "来自你的消息",
@@ -45,15 +45,15 @@ const cn = {
   Memory: {
     Title: "历史摘要",
     EmptyContent: "对话内容过短，无需总结",
-    Send: "自动压缩聊天记录并作为上下文发送",
+      Send: "自动压缩对话记录并作为上下文发送",
     Copy: "复制摘要",
     Reset: "重置对话",
     ResetConfirm: "重置后将清空当前对话记录以及历史摘要，确认重置？",
   },
   Home: {
-    NewChat: "新的聊天",
+      NewChat: "新的对话",
     DeleteChat: "确认删除选中的对话？",
-    DeleteToast: "已删除会话",
+    DeleteToast: "已删除对话",
     Revert: "撤销",
   },
   Settings: {
@@ -78,7 +78,7 @@ const cn = {
         tr: "Türkçe",
         jp: "日本語",
         de: "Deutsch",
-        vi: "Tiếng Việt",
+        vi: "Vietnamese",
         ru: "Русский",
         cs: "Čeština",
       },
@@ -86,7 +86,7 @@ const cn = {
     Avatar: "头像",
     FontSize: {
       Title: "字体大小",
-      SubTitle: "聊天内容的字体大小",
+      SubTitle: "对话内容的字体大小",
     },
 
     Update: {
@@ -95,35 +95,35 @@ const cn = {
       CheckUpdate: "检查更新",
       IsChecking: "正在检查更新...",
       FoundUpdate: (x: string) => `发现新版本：${x}`,
-      GoToUpdate: "前往更新",
+      GoToUpdate: "", //因为这个按钮实在没有什么存在的必要所以文字设为空
     },
-    SendKey: "发送键",
-    Theme: "主题",
+    SendKey: "发送快捷键",
+    Theme: "主题色",
     TightBorder: "无边框模式",
     SendPreviewBubble: {
       Title: "预览气泡",
-      SubTitle: "在预览气泡中预览 Markdown 内容",
+      SubTitle: "在预览气泡中以 Markdown 格式预览输入框中内容",
     },
     Mask: {
       Title: "面具启动页",
-      SubTitle: "新建聊天时，展示面具启动页",
+      SubTitle: "新建对话时，展示面具启动页",
     },
     Prompt: {
       Disable: {
-        Title: "禁用提示词自动补全",
-        SubTitle: "在输入框开头输入 / 即可触发自动补全",
+        Title: "禁用预设指令",
+        SubTitle: "在输入框开头输入 / 即可使用预设指令",
       },
-      List: "自定义提示词列表",
+      List: "自定义预设指令列表",
       ListCount: (builtin: number, custom: number) =>
         `内置 ${builtin} 条，用户定义 ${custom} 条`,
       Edit: "编辑",
       Modal: {
-        Title: "提示词列表",
+          Title: "预设指令列表",
         Add: "新建",
-        Search: "搜索提示词",
+          Search: "搜索预设指令",
       },
       EditModal: {
-        Title: "编辑提示词",
+          Title: "编辑预设指令",
       },
     },
     HistoryCount: {
@@ -136,7 +136,7 @@ const cn = {
     },
     Token: {
       Title: "API Key",
-      SubTitle: "使用自己的 Key 可绕过密码访问限制",
+      SubTitle: "这里可以使用你的API Key",
       Placeholder: "OpenAI API Key",
     },
 
@@ -145,13 +145,13 @@ const cn = {
       SubTitle(used: any, total: any) {
         return `本月已使用 $${used}，订阅总额 $${total}`;
       },
-      IsChecking: "正在检查…",
-      Check: "重新检查",
-      NoAccess: "输入 API Key 或访问密码查看余额",
+      IsChecking: "正在查询…",
+      Check: "重新查询",
+      NoAccess: "输入访问密码或API Key以查询余额",
     },
     AccessCode: {
       Title: "访问密码",
-      SubTitle: "管理员已开启加密访问",
+      SubTitle: "输入访问密码以直接使用",
       Placeholder: "请输入访问密码",
     },
     Model: "模型 (model)",
@@ -169,12 +169,12 @@ const cn = {
     },
   },
   Store: {
-    DefaultTopic: "新的聊天",
-    BotHello: "有什么可以帮你的吗",
+    DefaultTopic: "新的对话",
+    BotHello: "欢迎使用GG ChatGPT，有什么可以帮你的吗",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) =>
-        "这是 ai 和用户的历史聊天总结作为前情提要：" + content,
+        "这是 ai 和用户的历史对话总结作为前情提要：" + content,
       Topic:
         "使用四到五个字直接返回这句话的简要主题，不要解释、不要标点、不要语气词、不要多余文本，如果没有主题，请直接返回“闲聊”",
       Summarize:
