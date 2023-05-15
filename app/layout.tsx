@@ -7,13 +7,21 @@ import { getBuildConfig } from "./config/build";
 const buildConfig = getBuildConfig();
 
 export const metadata = {
-  title: "Goldenglow ChatGPT",
-  description: "Goldenglow No.1!",
+  title: "ChatGPT Next Web",
+  description: "Your personal ChatGPT Chat Bot.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#151515" },
+  ],
   appleWebApp: {
-    title: "Goldenglow ChatGPT",
+    title: "ChatGPT Next Web",
     statusBarStyle: "default",
   },
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
 };
 
 export default function RootLayout({
@@ -22,25 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-cn">
+    <html lang="en">
       <head>
-        <meta
-          name="theme-color"
-          content="#fdd2d3"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#5c3f48"
-          media="(prefers-color-scheme: dark)"
-        />
         <meta name="version" content={buildConfig.commitId} />
         <link rel="manifest" href="/site.webmanifest"></link>
-        {/*<link rel="preconnect" href="https://fonts.proxy.ustclug.org"></link>
-        <link
-          href="https://fonts.proxy.ustclug.org/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap"
-          rel="stylesheet"
-        ></link>*/}
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
       <body>{children}</body>
