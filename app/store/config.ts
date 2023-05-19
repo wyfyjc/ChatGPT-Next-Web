@@ -22,20 +22,20 @@ export const DEFAULT_CONFIG = {
   fontSize: 14,
   theme: Theme.Auto as Theme,
   tightBorder: false,
-  sendPreviewBubble: true,
+  sendPreviewBubble: false,
   sidebarWidth: 300,
 
   disablePromptHint: false,
 
-  dontShowMaskSplashScreen: false, // dont show splash screen when create chat
+  dontShowMaskSplashScreen: true, // dont show splash screen when create chat
 
   modelConfig: {
     model: "gpt-3.5-turbo" as ModelType,
-    temperature: 0.5,
-    max_tokens: 2000,
+    temperature: 0.7,
+    max_tokens: 4000,
     presence_penalty: 0,
     sendMemory: true,
-    historyMessageCount: 4,
+    historyMessageCount: 10,
     compressMessageLengthThreshold: 1000,
   },
 };
@@ -112,7 +112,7 @@ export function limitNumber(
   x: number,
   min: number,
   max: number,
-  defaultValue: number
+  defaultValue: number,
 ) {
   if (typeof x !== "number" || isNaN(x)) {
     return defaultValue;
@@ -171,6 +171,6 @@ export const useAppConfig = create<ChatConfigStore>()(
 
         return state;
       },
-    }
-  )
+    },
+  ),
 );

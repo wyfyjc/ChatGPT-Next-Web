@@ -7,19 +7,19 @@ import { getBuildConfig } from "./config/build";
 const buildConfig = getBuildConfig();
 
 export const metadata = {
-  title: "ChatGPT Next Web",
-  description: "Your personal ChatGPT Chat Bot.",
+  title: "Goldenglow ChatGPT",
+  description: "Goldenglow No.1!",
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
   },
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#151515" },
+    { media: "(prefers-color-scheme: light)", color: "#fdd2d3" },
+    { media: "(prefers-color-scheme: dark)", color: "#5c3f48" },
   ],
   appleWebApp: {
-    title: "ChatGPT Next Web",
+    title: "Goldenglow ChatGPT",
     statusBarStyle: "default",
   },
 };
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="zh-cn">
       <head>
         <meta name="version" content={buildConfig.commitId} />
         <link rel="manifest" href="/site.webmanifest"></link>
