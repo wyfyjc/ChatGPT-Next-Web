@@ -112,7 +112,7 @@ export function limitNumber(
   x: number,
   min: number,
   max: number,
-  defaultValue: number,
+  defaultValue: number
 ) {
   if (typeof x !== "number" || isNaN(x)) {
     return defaultValue;
@@ -171,6 +171,6 @@ export const useAppConfig = create<ChatConfigStore>()(
 
         return state;
       },
-    },
-  ),
+    }
+  )
 );
