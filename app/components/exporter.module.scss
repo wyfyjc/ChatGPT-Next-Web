@@ -129,23 +129,19 @@
 
       .logo {
         position: absolute;
-        top: 0px;
-        left: 0px;
-        transform: scale(2);
+        top: 25px;
+        left: 100px;
+        transform: scale(1.9);
         z-index: 0;
       }
 
       .main-title {
-        position: relative;
         font-size: 20px;
         font-weight: bolder;
-        z-index: 9999;
       }
 
       .sub-title {
-        position: relative;
         font-size: 12px;
-        z-index: 9999;
       }
 
       .icons {
