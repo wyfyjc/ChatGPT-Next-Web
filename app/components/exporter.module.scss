@@ -132,15 +132,18 @@
         top: 0px;
         left: 0px;
         transform: scale(2);
+        z-index: 99;
       }
 
       .main-title {
         font-size: 20px;
         font-weight: bolder;
+        z-index:100;
       }
 
       .sub-title {
         font-size: 12px;
+        z-index:100;
       }
 
       .icons {
