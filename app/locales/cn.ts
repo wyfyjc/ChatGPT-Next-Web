@@ -36,12 +36,12 @@ const cn = {
     },
   },
   Export: {
-    Title: "导出对话记录为 Markdown",
+    Title: "导出对话记录",
     Copy: "全部复制",
     Download: "下载文件",
     Share: "分享到 ShareGPT",
     MessageFromYou: "来自你的消息",
-    MessageFromChatGPT: "来自 ChatGPT 的消息",
+    MessageFromChatGPT: "来自 Goldenglow ChatGPT 的消息",
     Format: {
       Title: "导出格式",
       SubTitle: "可以导出 Markdown 文本或者 PNG 图片",
