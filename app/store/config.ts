@@ -73,7 +73,7 @@ export const ALL_MODELS = [
     available: ENABLE_GPT4,
   },
   {
-    name: "text-davinci-002-render-sha-mobile",
+    name: "text-davinci-002-render-sha",
     available: true,
   },
   {
@@ -81,7 +81,7 @@ export const ALL_MODELS = [
     available: true,
   },
   {
-    name: "gpt-3.5-turbo-0301",
+    name: "text-davinci-002",
     available: true,
   },
   {
