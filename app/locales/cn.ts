@@ -67,7 +67,7 @@ const cn = {
     Send: "自动压缩对话记录并作为上下文发送",
     Copy: "复制摘要",
     Reset: "重置对话",
-    ResetConfirm: "重置后将清空当前对话记录以及历史摘要，确认重置？",
+    ResetConfirm: "确认清空历史摘要？",
   },
   Home: {
     NewChat: "新的对话",
