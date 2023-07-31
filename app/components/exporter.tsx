@@ -470,7 +470,7 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>GG ChatGPT</div> //修改
+            <div className={styles["main-title"]}>GG ChatGPT</div>
             <div className={styles["sub-title"]}>
               Goldenglow No.1!
             </div>
