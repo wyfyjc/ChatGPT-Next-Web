@@ -27,6 +27,8 @@ import { SideBar } from "./sidebar";
 import { useAppConfig } from "../store/config";
 import { AuthPage } from "./auth";
 import { getClientConfig } from "../config/client";
+import { api } from "../client/api";
+import { useAccessStore } from "../store";
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
@@ -74,8 +76,8 @@ export function useSwitchTheme() {
     );
 
     if (config.theme === "auto") {
-      metaDescriptionDark?.setAttribute("content", "#5c3f48");
-      metaDescriptionLight?.setAttribute("content", "#fdd2d3");
+      metaDescriptionDark?.setAttribute("content", "#5c3f48"); //修改
+      metaDescriptionLight?.setAttribute("content", "#fdd2d3"); //修改
     } else {
       const themeColor = getCSSVar("--theme-color");
       metaDescriptionDark?.setAttribute("content", themeColor);
@@ -152,11 +154,25 @@ function Screen() {
   );
 }
 
+export function useLoadData() {
+  const config = useAppConfig();
+
+  useEffect(() => {
+    (async () => {
+      const models = await api.llm.models();
+      config.mergeModels(models);
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+}
+
 export function Home() {
   useSwitchTheme();
+  useLoadData();
 
   useEffect(() => {
     console.log("[Config] got config from build time", getClientConfig());
+    useAccessStore.getState().fetch();
   }, []);
 
   if (!useHasHydrated()) {

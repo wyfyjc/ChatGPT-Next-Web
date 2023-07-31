@@ -3,8 +3,9 @@ import "./styles/globals.scss";
 import "./styles/markdown.scss";
 import "./styles/highlight.scss";
 import { getClientConfig } from "./config/client";
+import { type Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Goldenglow ChatGPT",
   description: "Goldenglow No.1!",
   viewport: {
@@ -25,7 +26,7 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;    
+  children: React.ReactNode;
 }) {
   return (
     <html lang="zh-cn">
