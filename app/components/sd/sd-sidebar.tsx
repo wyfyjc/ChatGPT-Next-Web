@@ -120,7 +120,7 @@ export function SideBar(props: { className?: string }) {
         <SdPanel />
       </SideBarBody>
       <SideBarTail
-        primaryAction={}
+        primaryAction={null}
         secondaryAction={
           <IconButton
             text={Locale.SdPanel.Submit}
