@@ -23,7 +23,6 @@ import CopyIcon from "@/app/icons/copy.svg";
 import PromptIcon from "@/app/icons/prompt.svg";
 import ResetIcon from "@/app/icons/reload.svg";
 import { useSdStore } from "@/app/store/sd";
-import locales from "@/app/locales";
 import LoadingIcon from "@/app/icons/three-dots.svg";
 import ErrorIcon from "@/app/icons/delete.svg";
 import SDIcon from "@/app/icons/sd.svg";
@@ -37,6 +36,7 @@ import { removeImage } from "@/app/utils/chat";
 import { SideBar } from "./sd-sidebar";
 import { WindowContent } from "@/app/components/home";
 import { params } from "./sd-panel";
+import clsx from "clsx";
 
 function getSdTaskStatus(item: any) {
   let s: string;
@@ -64,14 +64,14 @@ function getSdTaskStatus(item: any) {
   return (
     <p className={styles["line-1"]} title={item.error} style={{ color: color }}>
       <span>
-        {locales.Sd.Status.Name}: {s}
+        {Locale.Sd.Status.Name}: {s}
       </span>
       {item.status === "error" && (
         <span
           className="clickable"
           onClick={() => {
             showModal({
-              title: locales.Sd.Detail,
+              title: Locale.Sd.Detail,
               children: (
                 <div style={{ color: color, userSelect: "text" }}>
                   {item.error}
@@ -105,7 +105,7 @@ export function Sd() {
 
   return (
     <>
-      <SideBar className={isSd ? homeStyles["sidebar-show"] : ""} />
+      <SideBar className={clsx({ [homeStyles["sidebar-show"]]: isSd })} />
       <WindowContent>
         <div className={chatStyles.chat} key={"1"}>
           <div className="window-header" data-tauri-drag-region>
@@ -122,7 +122,10 @@ export function Sd() {
               </div>
             )}
             <div
-              className={`window-header-title ${chatStyles["chat-body-title"]}`}
+              className={clsx(
+                "window-header-title",
+                chatStyles["chat-body-title"],
+              )}
             >
               <div className={`window-header-main-title`}>Stability AI</div>
               <div className="window-header-sub-title">
@@ -134,6 +137,7 @@ export function Sd() {
               {showMaxIcon && (
                 <div className="window-action-button">
                   <IconButton
+                    aria={Locale.Chat.Actions.FullScreen}
                     icon={config.tightBorder ? <MinIcon /> : <MaxIcon />}
                     bordered
                     onClick={() => {
@@ -189,13 +193,13 @@ export function Sd() {
                         className={styles["sd-img-item-info"]}
                       >
                         <p className={styles["line-1"]}>
-                          {locales.SdPanel.Prompt}:{" "}
+                          {Locale.SdPanel.Prompt}:{" "}
                           <span
                             className="clickable"
                             title={item.params.prompt}
                             onClick={() => {
                               showModal({
-                                title: locales.Sd.Detail,
+                                title: Locale.Sd.Detail,
                                 children: (
                                   <div style={{ userSelect: "text" }}>
                                     {item.params.prompt}
@@ -208,7 +212,7 @@ export function Sd() {
                           </span>
                         </p>
                         <p>
-                          {locales.SdPanel.AIModel}: {item.model_name}
+                          {Locale.SdPanel.AIModel}: {item.model_name}
                         </p>
                         {getSdTaskStatus(item)}
                         <p>{item.created_at}</p>
@@ -219,7 +223,7 @@ export function Sd() {
                               icon={<PromptIcon />}
                               onClick={() => {
                                 showModal({
-                                  title: locales.Sd.GenerateParams,
+                                  title: Locale.Sd.GenerateParams,
                                   children: (
                                     <div style={{ userSelect: "text" }}>
                                       {Object.keys(item.params).map((key) => {
@@ -325,7 +329,7 @@ export function Sd() {
                   );
                 })
               ) : (
-                <div>{locales.Sd.EmptyRecord}</div>
+                <div>{Locale.Sd.EmptyRecord}</div>
               )}
             </div>
           </div>
