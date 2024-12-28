@@ -95,7 +95,7 @@ const cn = {
     IsContext: "预设提示词",
     ShortcutKey: {
       Title: "键盘快捷方式",
-      newChat: "打开新对话,
+      newChat: "打开新对话",
       focusInput: "聚焦输入框",
       copyLastMessage: "复制最后一个回复",
       copyLastCode: "复制最后一个代码块",
