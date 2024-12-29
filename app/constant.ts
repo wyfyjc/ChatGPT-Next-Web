@@ -151,8 +151,8 @@ export const Stability = {
 };
 
 export const Anthropic = {
-  ChatPath: "v1/messages",
-  ChatPath1: "v1/complete",
+  ChatPath: "v1/chat/completions", // ChatPath: "v1/messages",
+  ChatPath1: "v1/complete", // ChatPath1: "v1/complete",
   ExampleEndpoint: "https://api.huiyan-ai.cn.com", // ExampleEndpoint: "https://api.anthropic.com",
   Vision: "2023-06-01",
 };
