@@ -84,7 +84,7 @@ if (mode !== "export") {
       },
       {
         source: "/api/proxy/anthropic/:path*",
-        destination: "https://api.anthropic.com/:path*",
+        destination: "https://api.huiyan-ai.cn/:path*", // destination: "https://api.anthropic.com/:path*",
       },
       {
         source: "/google-fonts/:path*",
