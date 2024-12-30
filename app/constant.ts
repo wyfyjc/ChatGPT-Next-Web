@@ -12,7 +12,7 @@ export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 export const STABILITY_BASE_URL = "https://api.stability.ai";
 
 export const OPENAI_BASE_URL = "https://api.openai.com";
-export const ANTHROPIC_BASE_URL = "https://api.huiyan-ai.cn"; // ANTHROPIC_BASE_URL = "https://api.anthropic.com";
+export const ANTHROPIC_BASE_URL = "https://api.anthropic.com";
 
 export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
@@ -151,9 +151,9 @@ export const Stability = {
 };
 
 export const Anthropic = {
-  ChatPath: "v1/chat/completions", // ChatPath: "v1/messages",
-  ChatPath1: "v1/complete", // ChatPath1: "v1/complete",
-  ExampleEndpoint: "https://api.huiyan-ai.cn.com", // ExampleEndpoint: "https://api.anthropic.com",
+  ChatPath: "v1/messages",
+  ChatPath1: "v1/complete",
+  ExampleEndpoint: "https://api.anthropic.com",
   Vision: "2023-06-01",
 };
 
